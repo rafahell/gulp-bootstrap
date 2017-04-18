@@ -1,5 +1,5 @@
-# CNR 3220
+# Gulpjs + Bootstrap
 
-Added foundation 6 and gulp-file-include = html partials
+Added Bootstrap and gulp-file-include to create html partials
 
-	ssh://git@newsource.accenture.com/cnr/3220-cnr.git
+	
