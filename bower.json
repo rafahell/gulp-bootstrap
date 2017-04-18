@@ -1,0 +1,12 @@
+{
+  "name": "foundation-sites",
+  "private": true,
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "modernizr": "^2.8.3",
+    "hammerjs": "~2.0.8",
+    "wow": "~1.1.2",
+    "slick-carousel": "^1.6.0",
+    "bootstrap-sass": "^3.3.7"
+  }
+}

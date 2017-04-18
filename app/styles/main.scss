@@ -1,0 +1,240 @@
+// bower:scss
+// endbower
+
+
+//css files
+@import "fonts.scss";
+@import "../../bower_components/wow/css/libs/animate.scss";
+@import "../../bower_components/slick-carousel/slick/slick-theme.scss";
+@import "../../bower_components/slick-carousel/slick/slick.scss";
+@import "../../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+
+// colours
+$blue: #2D50A3;
+$white: #FFFFFF;
+$black: #000000;
+$dark-gray: #292c2f;
+$red:#FF2C2C;
+$purple:#460EAA;
+$yellow:#F2AC00;
+$green:#29B029;
+$light-blue: #35CFF8;
+$orange: #FC7A23;
+$light-green: #BBB927;
+$blue-modal: #4161AC;
+
+body {
+  background: #fafafa;
+  font-family: 'agfa_rotis_sans_serifregular';
+  font-weight: normal;
+  color: #333;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  padding-top: 100px;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'agfa_rotis_sans_serif_exbdRg';
+  font-weight: normal;
+}
+
+.spacer {
+  background-color: transparent;
+  border: 0;
+  height: 1px;
+  margin-bottom: 2.5em;
+  display: block;
+  width: 100%;
+}
+
+//navigation
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+.navbar-fixed-top .nav {
+    padding: 15px 0;
+}
+
+.navbar-fixed-top .navbar-brand {
+    padding: 0 15px;
+}
+
+
+//footer
+.footer {
+  background-color: $dark-gray;
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 1rem;
+  p {
+    &.slogan {
+      color: #8d9093;
+      font-size: 1.2rem;
+      margin: 0 0 0.5rem;
+    }
+    &.copywrite {
+      color: #8f9296;
+      font-size: 0.875rem;
+      margin: 0;
+    }
+  }
+  .links a {
+    list-style: none;
+    font-weight: bold;
+    color: $white;
+    padding: 3rem 0 2rem;
+    margin: 0;
+    &::after {
+      content: "•";
+      padding: 0 0.4rem 0 0.8rem;
+    }
+    &:last-child::after {
+      content: "";
+      padding: 0 0.4rem 0 0.8rem;
+    }
+  }
+}
+
+//iframe video responsive
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 35px;
+  height: 0;
+  overflow: hidden;
+  display: block;
+  text-align:center;
+}
+.video-container iframe {
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+//inside pages
+.page-header {
+  position: relative;
+  height: 350px;
+
+  .img-hero {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+
+  .inner-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+    width: 1240px;
+    max-width: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
+
+  .page-heading {
+    position: absolute;
+    bottom: 0px;
+    margin: 0;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    left: 30px;
+    right: 30px;
+    transition: bottom .2s ease-in;
+    }
+  }
+}
+
+//text colours.
+.whitep {
+  color:$white !important;
+}
+.bluep {
+  color:$blue !important;
+}
+.redp {
+  color:$red !important;
+}
+.purplep {
+  color:$purple !important;
+}
+.yellowp {
+  color:$yellow !important;
+}
+.greenp {
+  color:$green !important;
+}
+.light-greenp {
+  color: $light-green !important;
+}
+.light-bluep {
+  color: $light-blue !important;
+}
+.orangep {
+  color: $orange !important;
+}
+
+.blue {
+  background: $blue;
+
+  &:hover {
+    cursor: pointer;
+    background: #404040;
+    -webkit-transition: background-color 300ms linear;
+    -moz-transition: background-color 300ms linear;
+    -o-transition: background-color 300ms linear;
+    -ms-transition: background-color 300ms linear;
+    transition: background-color 300ms linear;
+  }
+}
+
+
+.logo {
+    position: absolute;
+    z-index: 999;
+    padding: 20px 20px;
+    width: 160px;
+}
+
+@media screen and (max-width: 767px) {
+  .one-half, .one-third, .one-fourth, .one-fifth  {
+      width: 100%;
+  }
+  .rowEqual {
+      display: inline-block;
+  }
+  .border-acn-red, .border-acn-purple, .border-acn-yellow, .border-acn-green, .border-acn-light-blue {
+    margin-bottom: 10px;
+  }
+  .orbit-heights {
+    height:300px;
+  }
+  .orbit-container {
+    max-height: 300px;
+    height: 300px;
+  }
+  .orbit-previous, .orbit-next {
+    display:none;
+  }
+  .orbit-caption {
+    font-size:15px;
+  }
+  .orbit-image {
+    height: 300px;
+  }
+}
