@@ -5,13 +5,19 @@ var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
+var sass = require('gulp-ruby-sass');
+//var concat = require('gulp-concat');  
+var rename = require('gulp-rename');   
+var uglify = require('gulp-uglify');  
 
+//styles
 gulp.task('styles', function () {
   return gulp.src('app/styles/main.scss')
     .pipe($.sourcemaps.init())
     .pipe($.sass({
       outputStyle: 'nested', // libsass doesn't support expanded yet
       precision: 10,
+
       onError: console.error.bind(console, 'Sass error:')
     }))
     .pipe($.postcss([
@@ -22,6 +28,29 @@ gulp.task('styles', function () {
     .pipe(reload({stream: true}));
 });
 
+//scss minified
+gulp.task('css', function() {
+    return sass('app/styles/main.scss', {
+            style: 'compressed',
+            loadPath: ['/bower_components/bootstrap-sass/assets/stylesheets']
+        })
+        .pipe(gulp.dest('dist/styles'));
+});
+
+//script paths
+var jsFiles = 'app/scripts/*.js',  
+    jsDest = 'dist/scripts';
+
+gulp.task('scripts', function() {  
+    return gulp.src(jsFiles)
+        //.pipe(concat('main.js'))
+        .pipe(gulp.dest(jsDest))
+        .pipe(rename('main.min.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest(jsDest));
+});
+
+//file includes **partials
 gulp.task('fileinclude', function () {
     return gulp.src('app/*.html')
         .pipe($.fileInclude())
@@ -29,28 +58,28 @@ gulp.task('fileinclude', function () {
         .pipe(gulp.dest('.tmp'));
 });
 
+//jshint [OFF]
 gulp.task('jshint', function () {
-  return gulp.src('app/scripts/**/*.js')
+  return gulp.src('app/!scripts/**/*.js')
     .pipe(reload({stream: true, once: true}))
     .pipe($.jshint())
     .pipe($.jshint.reporter('jshint-stylish'))
     .pipe($.if(!browserSync.active, $.jshint.reporter('fail')));
 });
 
-gulp.task('html', ['styles'], function () {
+//partials
+gulp.task('partials', function () {
   var assets = $.useref.assets({searchPath: ['.tmp', 'app', '.']});
 
   return gulp.src('app/*.html')
     .pipe($.fileInclude())
     .pipe(assets)
-    .pipe($.if('*.js', $.uglify()))
-    .pipe($.if('*.css', $.csso()))
     .pipe(assets.restore())
     .pipe($.useref())
-    // .pipe($.if('*.html', $.minifyHtml({conditionals: true, loose: true})))
     .pipe(gulp.dest('dist'));
 });
 
+//images
 gulp.task('images', function () {
   return gulp.src('app/img/**/*')
     .pipe($.cache($.imagemin({
@@ -63,6 +92,7 @@ gulp.task('images', function () {
     .pipe(gulp.dest('dist/img'));
 });
 
+//fonts
 gulp.task('fonts', function () {
   return gulp.src(require('main-bower-files')({
     filter: '**/*.{eot,svg,ttf,woff,woff2}'
@@ -71,6 +101,7 @@ gulp.task('fonts', function () {
     .pipe(gulp.dest('dist/fonts'));
 });
 
+//extras
 gulp.task('extras', function () {
   return gulp.src([
     'app/*.*',
@@ -126,7 +157,7 @@ gulp.task('wiredep', function () {
     .pipe(gulp.dest('app'));
 });
 
-gulp.task('build', ['jshint', 'html', 'images', 'fonts', 'fileinclude', 'extras'], function () {
+gulp.task('build', ['jshint','css', 'scripts', 'partials', 'images', 'fonts', 'fileinclude', 'extras'], function () {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 

@@ -1,27 +1,31 @@
-'use strict';
+//'use strict';
 /* jshint devel:true */
-$(window).resize(function () {
-    $('.grid').masonry('bindResize');
+function flipCards() {
+  var flipCard1 = document.getElementById("card1");
+  var flipCard2 = document.getElementById("card2");
+  var flipCard3 = document.getElementById("card3");
+  var flipCard_arr = [flipCard1,flipCard2,flipCard3];
+
+  for (var i = 0; i < flipCard_arr.length; i++) {
+        flipCard_arr[i].classList.toggle('flip'); 
+  }
+}
+
+var flipAllCards = document.getElementById('flipAll');
+
+flipAllCards.addEventListener('click', function() {
+  flipCards();
 });
 
-// $(window).load(function(){
-$('.grid').masonry({
-    itemSelector: '.grid-item'
-    //columnWidth: 300,
-    // gutter: 5,
-    // percentPosition: true,
-    // isFitWidth: true
-});  
-//   });
 
-$('.menu-icon').click(function(){
-    $('.menu-icon').addClass('fadeOutRight');
-});
 
-$('.close-button').click(function(){
-    $('.menu-icon').removeClass('fadeOutRight');
-    $('.menu-icon').addClass('fadeInRight');
-});
+
+
+
+
+
+
+
 
 
 $(function(){

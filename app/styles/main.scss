@@ -1,13 +1,12 @@
 // bower:scss
 // endbower
 
-
-//css files
 @import "fonts.scss";
+@import "../../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 @import "../../bower_components/wow/css/libs/animate.scss";
 @import "../../bower_components/slick-carousel/slick/slick-theme.scss";
 @import "../../bower_components/slick-carousel/slick/slick.scss";
-@import "../../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+
 
 // colours
 $blue: #2D50A3;
@@ -25,18 +24,39 @@ $blue-modal: #4161AC;
 
 body {
   background: #fafafa;
-  font-family: 'agfa_rotis_sans_serifregular';
   font-weight: normal;
+  font-family: 'Graphik LC Web';
   color: #333;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  padding-top: 100px;
+  background: url(../img/bg.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
+body:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  top: 0px; 
+  left: 4px; 
+  right: 0px; 
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  background-size: cover;
+  background-position: center center;
+}
+
+
 h1,h2,h3,h4,h5,h6 {
-  font-family: 'agfa_rotis_sans_serif_exbdRg';
-  font-weight: normal;
+  font-family: 'Graphik Web';
+}
+
+p {
+  font-size: 16px;
 }
 
 .spacer {
@@ -49,21 +69,19 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 //navigation
+.navbar {
+  position: relative;
+  min-height: 130px;
+  //margin-bottom: 50px;
+  border: none;
+}
+
 .browserupgrade {
   margin: 0.2em 0;
   background: #ccc;
   color: #000;
   padding: 0.2em 0;
 }
-
-.navbar-fixed-top .nav {
-    padding: 15px 0;
-}
-
-.navbar-fixed-top .navbar-brand {
-    padding: 0 15px;
-}
-
 
 //footer
 .footer {
@@ -205,36 +223,129 @@ h1,h2,h3,h4,h5,h6 {
 
 
 .logo {
-    position: absolute;
-    z-index: 999;
-    padding: 20px 20px;
-    width: 160px;
+  position: absolute;
+  z-index: 999;
+  padding: 20px 20px;
+  width: 160px;
 }
 
-@media screen and (max-width: 767px) {
-  .one-half, .one-third, .one-fourth, .one-fifth  {
-      width: 100%;
+@media screen and (max-width: 767px) { }
+
+
+//FLIP CARDS
+.flip-container {
+	perspective: 1000px;
+	transform-style: preserve-3d;
+}
+
+.flip .back {
+		transform: rotateY(0deg);
+    transition: all 0.75s ease;
+	}
+.flip .front {
+	    transform: rotateY(180deg);
+      transition: all 0.75s ease;
+	}
+
+.flip-container, .front, .back {
+	width: 360px;
+	height: 600px;
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+	transition: 0.6s;
+	transform-style: preserve-3d;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/*  UPDATED! front pane, placed above back */
+.front {
+	z-index: 2;
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(-180deg);
+}
+
+//airplane effect
+.airplane-container {
+
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
   }
-  .rowEqual {
-      display: inline-block;
+  
+  .airplane {
+    position: absolute;
+    width: 20px;
+    height: 15px;
+    top: 15%;
+    left: 38%;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    animation: move 4s infinite;
   }
-  .border-acn-red, .border-acn-purple, .border-acn-yellow, .border-acn-green, .border-acn-light-blue {
-    margin-bottom: 10px;
+
+  @keyframes move {
+    40% {
+      left: 48%;
+      opacity: 1;
+    }
+    100% {
+      left: 58%;
+      opacity: 0;
+    }
   }
-  .orbit-heights {
-    height:300px;
+}
+
+//score panel
+.score-panel {
+  background: url(../img/scrore-bar.svg);
+  background-repeat: no-repeat;
+  width: 500px;
+  height: 101px;
+  position: relative;
+}
+
+
+#dollar-count {
+  font-family: 'Graphik LC Web';
+  font-size:40px;
+  color: white;
+  top: 20px;
+  position: absolute;
+  left: 40%;
+
+  sup { 
+    vertical-align: super;
+    font-size: 13px;
   }
-  .orbit-container {
-    max-height: 300px;
-    height: 300px;
-  }
-  .orbit-previous, .orbit-next {
-    display:none;
-  }
-  .orbit-caption {
-    font-size:15px;
-  }
-  .orbit-image {
-    height: 300px;
+}
+
+#days-count {
+  font-family: 'Graphik LC Web';
+  font-size:40px;
+  color: white;
+  top: 20px;
+  position: absolute;
+  right: 44%;
+
+  sup { 
+    vertical-align: super;
+    font-size: 13px;
   }
 }

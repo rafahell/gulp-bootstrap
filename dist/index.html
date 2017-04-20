@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Chemical & Natural Resources Industries Commercial Excellence</title>
+    <title>Blockchain</title>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-    <link rel="stylesheet" href="styles/vendor.css">
+    
 
     <link rel="stylesheet" href="styles/main.css">
   </head>
@@ -16,125 +16,118 @@
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
       <![endif]-->
 
-      <div class="expanded row">
-          <div class="off-canvas-wrapper">
-    <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
-      <div class="off-canvas position-right" id="offCanvasRight" data-off-canvas data-position="right">
-          <button class="close-button" aria-label="Close menu" type="button" data-close>
-            <span aria-hidden="true">&times;</span>
-          </button>
-        <ul class="vertical menu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="industry-trends.html">Industry Trends</a></li>
-          <li><a href="value-proposition.html">Value Proposition</a></li>
-          <li><a href="commercial-excellence.html">Commercial Excellence Digital Solutions</a></li>
-            <ul class="nested vertical menu">
-              <li><a href="aip.html">Adaptable</a></li>
-              <li><a href="ready-use.html">Ready-to-Use</a></li>
-            </ul>
-          <li><a href="credentials.html">Credentials</a></li>
-          <li><a href="contacts.html">Contacts</a></li>
-        </ul>
-      </div>
-      <div class="off-canvas-content" data-off-canvas-content>
-        <!--<div class="title-bar">
-          <div class="title-bar-right">-->
-                <button class="menu-icon" type="button" data-open="offCanvasRight"></button>
+      <div class="row">
+            <!-- Navigation -->
+<nav class="navbar" role="navigation">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header pull-left">
+            <a class="navbar-brand" href="#">
+                <img src="img/logo.png" alt="">
+            </a>
+        </div>
 
-          <!--</div>
-        </div>-->   
+        <div class="pull-right">
+          <img src="img/blockchain.png" id="flipAll" class="pull-right" />
+        </div>
+
+          <div class="center-block text-center">
+            <div id="dollar-count"><sup>$</sup> 0 </div>
+            <div id="days-count">0 <sup>DAYS</sup></div>
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="466" height="94" viewBox="0 0 466 94"><defs><style>.a{fill:none;}.b{clip-path:url(#a);}.c,.d{isolation:isolate;}.d,.f{fill:#fff;}.d,.e{opacity:0.25;}</style><clipPath id="a" transform="translate(-8)"><rect class="a" width="482" height="94"/></clipPath></defs><title>scrore-bar-2</title><g class="b"><image class="c" width="466" height="94" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAdIAAABeCAYAAACXZZUhAAAACXBIWXMAAAsSAAALEgHS3X78AAAHIElEQVR4Xu3df6zVdR3HcczwYhjmppSObmutXybErwuXey+MVssMiYpSbzcglR8mYrTlH81cK/OPWsamGBCJgGgK5S8UQhQSk9ZazjT/aM2cRmvKCOZYcIHru9floEvk8vqec77f7/mec55/PP573XO/38/Zvs99/7l30McvWtoi/5BeAACQ2BGZNSgiBp1/0dLrJAAAQGK75Yw3Qnqm7E3wQwAAoOQ7/Q09GtJSTG/7oQQAALD2yJlvDennbxsueyUAAMBJ3fRGP98MaSmmP18iAQAABvSavG+gkL5fDib4EAAAmtUt/9/Ot4S03yemLVspAQAA3uaQtLqQtsrhBB8GAECzueP4br4tpKWYLl8nAQAA3qSXzOUfShbSi5d/TA5LAACAo9afqJknDGkppivulwAAACuOyLiyQnrB9BXt0icBAECTe2ygXg4Y0lJMf/GEBAAATW5qpSH9VIIPBwCgkT19slaeNKRHY/qFlU9LAADQpGZUG9LpCX4JAACN6HkZXFVIR8745TvlOQkAAJrMHNdJG9JjMe1J8MsAAGgkL8vprpE2oqWQ3t4iL0oAANAkFrk+Jg7p0Zh+8fb5EgAANIHd8i7XxjJDuqpF/iUBAECD+67rYtkh7TfqS6sWSwAA0MD2yDDXxApDesdQeUUCAIAG9SPXw4pDWorp6uslAABoQK/Jea6F1YX0y6vPlr0SAAA0mGWug1WHtBTTNT+TAACggRyWD7oGphLST85cM0IOSgAA0CA2uP6lFtJSTNeukgAAoEGMcu1LN6RfWfth6ZMAAKDObXbdSz2kpZjeeY8EAAB1rss1L5OQjv7qulHSJwEAQJ3aKae45mUS0mMx3ZTgIgEAKKrPudZlHNK7JsrrEgAA1JlnpOK30VRCejSml9y1XQIAgDoz0zXOsYMkRl9y91QJAADqyN+kqrfRfnaQ1JhLf/VHCQAA6sRs17Yk7CApXdCFCS4aAIAieElaXNuSsINyjLnsnmclAAAouMWuaUnZQTnGXHZvtwQAAAX2qpzhmpaUHZRjbPe9g+UFCQAACupG17Ny2EG5xnavXygBAEABHZD3upaVww7KNa57/VDZLQEAQMHc6jpWLjuoxLjuDddJAABQIAflA65h5bKDSoz72q+HyR4JAAAK4k7Xr0rYQaV0wTcmuCkAAPJwRM537aqEHVRqfM9vhss+CQAAauwB161K2UE1dOFLEtwcAABZG+uaVSk7qMb4nvtGyAEJAABqZKvrVTXsoFrjv37/SgkAAGqk07WqGnZQLd1AqxxOcKMAAKRtp+tUtewgDW2zHlgnAQBAzqa5RlXLDtLQNuvBC+SIBAAAOXlOqv7H3Y4dpKVt9oMbJQAAyEmPa1Ma7CAtbbMf6pQAACAHu+Q016Y02EGaJsx5aKcEAAAZW+ialBY7SNOEORs/IwEAQIZekXe7JqXFDtI24RsP/1kCAICMfM+1KE12kDbd4IwEhwAAQCX2ydmuRWmyg7RNvPyRwfK8BAAAKfup61Da7CALEy/f1CMBAECKDsq5rkFps4MstF+x6TR5UQIAgJQsc/3Jgh1kpf2KzQskAABIQa+0uvZkwQ6yohvWW+nmXQkOBwAAZ63rTlbsIEvtV/722xIAAFThkIx0zcmKHWSp/cotw2S3BAAAFXrY9SZLdpC1SXO3fF8CAIAKtbvWZMkOsjZp7qPDZb8EAABlesp1Jmt2kIdJ8x5dKgEAQJk+6xqTNTvIw6R5W1vlkAQAAAk9I6e6xmTNDvLSMX/ragkAABK61LUlD3aQl475j31EjkgAAGC8IC2uLXmwgzx1zH98vQQAAMY815S82EGeOhY8PlL6JAAAGMC/ZYhrSl7sIG8dC7Y9IgEAwAAWu5bkyQ7y1nnVtnbpkwAA4DivylDXkjzZQS10XrV9uwQAAMe5wTUkb3ZQCzqoqQkOEwDQXPbJOa4hebODWun85u/+JAEAwDFLXDtqwQ5qRQc2LcGhAgCawwE5z7WjFuygVrqufuId8lcJAEDTW+26USt2UEs6uDkJDhcA0Pg+6ppRK3ZQS11X7xgieivdEQCAprXW9aKW7KDWuhbu+LQckgAANJ3dMsK1opbsoAi6Fj55kwQAoKn0ykzXiFqzgyKYfM2TLbJBAgDQNAr3xxdOxA6KYvI1v3+P3CcBAGh4N8tg14YisIMi0aGeJWsSfAEAgPrUKz+WQvyv0STsoGgmL3rqdPmJ/FcCANAw/infklNcC4rEDopKBz1X/pLgiwEAFN8Wudg9+4vIDops8qKdbXKr7JcAANSdXXK9tLpnflHZQdFNuXbnYLlQ7pZeCQBA4f1HlkiHe84XnR3UiynX/uEsmSS3yMvSJ69LAABqrv953P9cflZukNEyxD3b64Ed1Bt9MS1yrkyXm2WbvCQHpRcAkJv98nfZKD+QKXKOnOqe5fXkfzyfZOkOaxT4AAAAAElFTkSuQmCC"/><path class="d" d="M57.9,29a2.27,2.27,0,0,0-2.41,2.1v1.41c-4.17.85-7.43,4-7.43,8.17a6.94,6.94,0,0,0,3.28,5.84,30.7,30.7,0,0,0,5.31,2.33c2.85,1,5.79,2.15,5.8,4.43,0,2.81-1.85,4.2-4.79,4.2a6.09,6.09,0,0,1-5-3.05,2.66,2.66,0,0,0-3.31-1.12,2.06,2.06,0,0,0-1,3,10.85,10.85,0,0,0,7.16,5.15V62.6a2.44,2.44,0,0,0,4.83,0V61.35c3.94-1,6.94-4.1,6.94-8.07A7,7,0,0,0,64,47.41a30.7,30.7,0,0,0-5.31-2.33c-2.83-1-5.79-2.15-5.8-4.4,0-2.81,1.85-4.2,4.79-4.2a6.06,6.06,0,0,1,5,3A2.66,2.66,0,0,0,66,40.61a2,2,0,0,0,.94-3,10.75,10.75,0,0,0-6.67-5V31.1A2.27,2.27,0,0,0,57.9,29Z" transform="translate(-8)"/><g class="e"><path class="f" d="M409,50a14.69,14.69,0,1,0,14.69-14.69A14.69,14.69,0,0,0,409,50Zm6.95-6.63a.84.84,0,0,0,1.22-1.15l0,0L416,41.09a11.7,11.7,0,0,1,6.82-2.81v1.53a.84.84,0,0,0,1.68,0V38.29a11.7,11.7,0,0,1,6.81,2.82l-1.08,1.08a.84.84,0,0,0,1.19,1.19l1.08-1.08a11.69,11.69,0,0,1,2.86,6.81h-1.57a.84.84,0,1,0,0,1.68h1.58a11.69,11.69,0,0,1-2.81,6.87l-1.14-1.14a.84.84,0,1,0-1.19,1.19l1.15,1.15a11.7,11.7,0,0,1-6.87,2.88V60.08a.84.84,0,1,0-1.68,0v1.65A11.69,11.69,0,0,1,416,58.86l1.16-1.16a.84.84,0,0,0-1.19-1.19h0l-1.16,1.15A11.7,11.7,0,0,1,412,50.79h1.61a.84.84,0,1,0,0-1.68H412a11.71,11.71,0,0,1,2.87-6.83Z" transform="translate(-8)"/><path class="f" d="M427.32,33.5a.89.89,0,0,0,.88-.88V29.88a.89.89,0,0,0-.88-.88h-7.26a.89.89,0,0,0-.88.88v2.73a.89.89,0,0,0,.88.89Z" transform="translate(-8)"/><path class="f" d="M437,34.8a2.32,2.32,0,1,1-2.32-2.32A2.32,2.32,0,0,1,437,34.8" transform="translate(-8)"/><path class="f" d="M423.69,52.58a2.57,2.57,0,0,0,1.13-4.88l-.8-5.54a.33.33,0,0,0-.6,0l-.84,5.54a2.57,2.57,0,0,0,1.12,4.88Z" transform="translate(-8)"/></g></g></svg>
+            <section class="airplane-container">
+            <svg class="airplane">
+              <use xlink:href="#airplane"></use>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" display="none">
+              <symbol id="airplane" viewBox="243.5 245.183 25 21.633">
+                <g>
+                  <path fill="#FFF" d="M251.966,266.816h1.242l6.11-8.784l5.711,0.2c2.995-0.102,3.472-2.027,3.472-2.308 c0-0.281-0.63-2.184-3.472-2.157l-5.711,0.2l-6.11-8.785h-1.242l1.67,8.983l-6.535,0.229l-2.281-3.28h-0.561v3.566
+  c-0.437,0.257-0.738,0.724-0.757,1.266c-0.02,0.583,0.288,1.101,0.757,1.376v3.563h0.561l2.281-3.279l6.535,0.229L251.966,266.816z"></path>
+                </g>
+              </symbol>
+            </svg>
+          </section>
+          
+          </div>
+
+          
+
+      </div>
+    <!-- /.container -->
+</nav>   
       </div>
         
       <div class="container">
-                     <a href="index.html"><div class="logo"><img src="img/logo@2x.png"></div></a>
-         <div class="acn-pilar" target="_blank"><a href="https://www.accenture.com/us-en/strategy-index" target="_blank">Strategy</a> | <a href="https://www.accenture.com/us-en/consulting-index" target="_blank">Consulting</a> | <a href="https://www.accenture.com/us-en/digital-index" target="_blank">Digital</a> | <a href="https://www.accenture.com/us-en/technology-index" target="_blank">Technology</a> | <a href="https://www.accenture.com/us-en/business-operations-index" target="_blank">Operations</a></div>
-         <div class="orbit-heights"> 
-          <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
-              <ul class="orbit-container">
-                <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
-                <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
-                <li class="orbit-slide is-active">
-                  <img class="orbit-image" src="img/Web-1366-3.jpg" alt="Space">
-                  <div class="orbit-caption">
-                     Chemical & Natural Resources Industries<br/>Commercial Excellence
-                  </div>
-                </li>
-                <li class="orbit-slide">
-                  <img class="orbit-image" src="img/Web-1366-4.jpg" alt="Space">
-                  <div class="orbit-caption">
-                     Chemical & Natural Resources Industries<br/>Commercial Excellence
-                  </div>
-                </li>
-                <li class="orbit-slide">
-                  <img class="orbit-image" src="img/Web-1366-6.jpg" alt="Space">
-                  <div class="orbit-caption">
-                     Chemical & Natural Resources Industries<br/>Commercial Excellence
-                  </div>
-                </li>
-                <li class="orbit-slide">
-                  <img class="orbit-image" src="img/Web-1366-7.jpg" alt="Space">
-                  <div class="orbit-caption">
-                     Chemical & Natural Resources Industries<br/>Commercial Excellence
-                  </div>
-                </li>
-              </ul>
-          </div><!-- /.slider -->
-         </div>
-          <!-- Masonry -->
-            <div class="grid">
-              <div class="grid-sizer"></div>
-              <div class="grid-item">
-                  <div class="item-inner">
-                    <span class="bg-image" style="background-image: url('img/rectangle-1.jpg');"></span>
-                  </div>
-              </div>
-              <div class="grid-item">
-                  <a href="industry-trends.html"><div id="blue" class="item-inner blue">
-                    <div class="content"><h4>Industry Trends</h4></div>
-                  </div></a>
-              </div>
-              <div class="grid-item">
-                  <div class="item-inner">
-                    <span class="bg-image" style="background-image: url('img/rectangle-2.jpg');"></span>
-                  </div>
-              </div>
-              
-              <div class="grid-item">
-                  <a href="commercial-excellence.html"><div class="item-inner blue">
-                    <div class="content"><h4>Commercial Excellence<br/>Digital Solutions</h4></div>
-                  </div></a>
-              </div>
+            
 
-              <div class="grid-item">
-                  <a href="value-proposition.html"><div class="item-inner blue">
-                    <div class="content"><h4>Value Proposition</h4></div>
-                  </div></a>
-              </div>
-              <div class="grid-item">
-                 <div class="item-inner">
-                    <span class="bg-image" style="background-image: url('img/rectangle-3.jpg');"></span>
-                  </div>
-              </div>
-              <div class="grid-item">
-                  <a href="credentials.html"><div class="item-inner blue">
-                    <div class="content"><h4>Credentials</h4></div>
-                  </div></a>
-              </div>
-              <div class="grid-item">
-                  <div class="item-inner">
-                    <span class="bg-image" style="background-image: url('img/rectangle-4.jpg');"></span>
-                  </div>
-              </div>
-            </div>
-      </div>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="text-center text-uppercase">
+            <p class="whitep">Experts Recommended overhaul every 3000 cycles</p>
+            <div class="spacer"></div>
+            <h3 class="whitep">Choose your Engine</h3>
+        </div>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
 
-      <footer class="footer">
-        <div class="row">
-          <div class="small-12 columns">
-            <p class="copywrite">© Accenture 2016 | All Rights Reserved | Powered by CMT EALA | Sales Design Studio</p>
+<!-- Content Row -->
+<div class="row">
+    <div class="col-md-4">
+      <div class="flip-container">
+        <div id="card1" class="flipper">
+          <div class="front">
+            <img src="http://placehold.it/360x600/0000FF/FFFFFF" />
+          </div>
+          <div class="back">
+            <img src="http://placehold.it/360x600/8E236B/FFFFFF" />
           </div>
         </div>
-      </footer><!-- /.footer -->
+      </div>
+    </div>
+    <!-- /.col-md-4 -->
+    
+    <div class="col-md-4">
+       <div class="flip-container">
+        <div id="card2" class="flipper">
+          <div class="front">
+            <img src="http://placehold.it/360x600/0000FF/FFFFFF" />
+          </div>
+          <div class="back">
+            <img src="http://placehold.it/360x600/8E236B/FFFFFF" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.col-md-4 -->
+
+    <div class="col-md-4">
+        <div class="flip-container">
+        <div id="card3" class="flipper">
+          <div class="front">
+            <img src="http://placehold.it/360x600/0000FF/FFFFFF" />
+          </div>
+          <div class="back">
+            <img src="http://placehold.it/360x600/8E236B/FFFFFF" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.col-md-4 -->
+</div>
+<!-- /.row -->
+      </div>
+
+      <!-- Footer -->
+      <footer class="footer">
+          <div class="row">
+              <div class="col-lg-12">
+                    <p class="copywrite">© Accenture 2016 | All Rights Reserved | Powered by CMT EALA | Sales Design Studio</p>
+              </div>
+          </div>
+      </footer>
 
       <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
       <script>
@@ -152,8 +145,6 @@
         
         
         <script>
-          $(document).foundation();
-
           var wow = new WOW({
             boxClass: 'wow',
             animateClass: 'is-animating'
