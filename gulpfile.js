@@ -31,14 +31,13 @@ gulp.task('styles', function () {
 //scss minified
 gulp.task('css', function() {
     return sass('app/styles/main.scss', {
-            style: 'compressed',
-            loadPath: ['/bower_components/bootstrap-sass/assets/stylesheets']
+            style: 'compressed'
         })
         .pipe(gulp.dest('dist/styles'));
 });
 
 //script paths
-var jsFiles = 'app/scripts/*.js',  
+var jsFiles = 'app/scripts/**/*.js',  
     jsDest = 'dist/scripts';
 
 gulp.task('scripts', function() {  

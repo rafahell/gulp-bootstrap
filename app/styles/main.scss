@@ -35,14 +35,15 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  overflow: hidden;
 }
 
 body:before {
   content: '';
-  position: absolute;
+  position: fixed;
   width: 100%;
   top: 0px; 
-  left: 4px; 
+  left: 0px; 
   right: 0px; 
   height: 100%;
   background: rgba(0, 0, 0, 0.55);
@@ -348,4 +349,16 @@ p {
     vertical-align: super;
     font-size: 13px;
   }
+}
+
+
+.btn-go {
+  background: url(../img/go.svg) no-repeat;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  overflow: hiddem;
+  right: 0;
+  top:50%;
+  opacity: 0;
 }
